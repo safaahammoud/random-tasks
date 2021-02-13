@@ -1,0 +1,8 @@
+@font-face {
+  font-family: 'Yusei Magic';
+  font-style: normal;
+  font-weight: 400;
+  src: url(assets/yuseimagic/Yusei-Magic.eot);
+  src: local('Yusei Magic'), url(assets/yuseimagic/Yusei-Magic.eot?#iefix) format('embedded-opentype'), url(assets/yuseimagic/Yusei-Magic.woff) format('woff'), url(assets/yuseimagic/Yusei-Magic.woff2) format('woff2'), url(assets/yuseimagic/Yusei-Magic.ttf) format('truetype'), url(assets/yuseimagic/Yusei-Magic.svg#YuseiMagic) format('svg');
+}
+
