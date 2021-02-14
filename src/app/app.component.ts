@@ -1,22 +1,20 @@
-import { HttpService } from './shared/services/http.service';
-import { Component } from '@angular/core';
-
+import { StateService } from './shared/services/UIState/state.service';
+import { Component, OnInit } from '@angular/core';
+import { UIState } from './shared/enums/UIState';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  activity:IActivity;
-  title = 'random-tasks';
-
-  public constructor(private httpService: HttpService){
+export class AppComponent implements OnInit {
+  UIState$;
+  UIState;
+  public constructor(private stateService: StateService){
   }
 
-  generate(){
-    this.httpService.get('https://www.boredapi.com/api/activity').subscribe((activity)=>{
-      this.activity = activity;
-    });
+  public ngOnInit(){
+    this.UIState = UIState;
+    this.UIState$ = this.stateService.UIState$;
+    this.stateService.UIState.next(UIState.empty);
   }
 }
--6

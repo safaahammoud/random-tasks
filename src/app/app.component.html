@@ -3,8 +3,7 @@
     Plan Your Weekend!
   </div>
 </nav>
-<button (click)="generate()">generate activity</button>
-<div>
-  {{activity?.activity}}
-</div>
-<router-outlet></router-outlet>
+
+<section *ngIf="UIState$ | async as state">
+  <app-tasks-empty *ngIf="state === UIState.empty"></app-tasks-empty>
+</section>
